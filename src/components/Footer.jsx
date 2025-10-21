@@ -48,7 +48,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-primary" />
-                <span>info@kanue.com</span>
+                <span>info@Canue.com</span>
               </li>
             </ul>
           </div>
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Bottom Section - Now Inside the Main Container */}
         <div className="border-t border-gray-700 pt-6 text-center text-sm">
           <p>
-            © {new Date().getFullYear()} <span className="text-primary font-semibold">Kanue Restaurant</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-primary font-semibold">Canue Restaurant</span>. All rights reserved.
           </p>
           <p className="mt-1">
             Designed with ❤️ by <span className="text-secondary font-semibold">Smart Girls</span>

@@ -17,7 +17,7 @@ export default  function Home({ handleOrderPopup }) {
       {/* Hero content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6">
         <h1 className="font-logo text-5xl sm:text-6xl text-primary drop-shadow-xl tracking-wider italic mb-4">
-          Kanue
+          Canoe
         </h1>
         <p className="text-white sm:text-xl md:text-2xl mb-6 max-w-2xl drop-shadow-lg">
           Experience modern and traditional dishes, a place to refresh, relax, and enjoy unforgettable flavors.
