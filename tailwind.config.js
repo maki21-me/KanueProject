@@ -8,13 +8,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-      logo: ["Pacifico", "cursive"],  // stylish script font
-      sans: ["Poppins", "sans-serif"], // modern sans
-    },
+        logo: ["Pacifico", "cursive"],  // stylish script font
+        sans: ["Poppins", "sans-serif"], // modern sans
+      },
       colors: {
-        primary: "#8B4513",     // brown for hover & button
-        secondary: "#5C4033",   // darker brown for gradient
-        accent: "#D2B48C"       // light brown for subtle highlights if needed
+        primary: "#d4af37",   // ✨ white-gold / golden brown
+        secondary: "#b8860b", // slightly darker gold tone for gradients or hovers
+        accent: "#fff8e7",    // creamy white accent (pairs well with gold)
+        light: "#ffffff",     // pure white
+        dark: "#2b2b2b",      // dark contrast for text or backgrounds
       },
       container: {
         center: true,
