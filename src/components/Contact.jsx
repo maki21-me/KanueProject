@@ -1,33 +1,51 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import BackgroundImage from "../assets/Images/bookorder.jpg"; // ✅ Replace with your own image
+import { motion } from "framer-motion";
+import BackgroundImage from "../assets/Images/bookorder.jpg"; // your image
 
 export default function Contact() {
   return (
-    <section
+    <motion.section
       id="contact"
       className="relative bg-center bg-cover bg-no-repeat text-gray-800 dark:text-white"
       style={{ backgroundImage: `url(${BackgroundImage})` }}
+
+      // PAGE FADE IN
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Content */}
       <div className="relative container mx-auto px-6 py-20 z-10">
+
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif italic font-bold text-[#d4af37] mb-2">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-4xl mt-8 font-serif italic font-bold text-[#d4af37] mb-2">
             Contact Us
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            We’d love to hear from you — feedback, bookings, or just a friendly hello!
+          <p className="text-gray-300 text-xl max-w-2xl mx-auto">
+            We’d love to hear from you—feedback, bookings, or just a friendly hello!
           </p>
-        </div>
+        </motion.div>
 
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-10">
+
           {/* Left: Contact Info */}
-          <div className="flex flex-col justify-center space-y-6 bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-[#d4af37]/40 shadow-[0_0_25px_rgba(212,175,55,0.2)]">
+          <motion.div
+            className="flex flex-col justify-center space-y-6 bg-white/10 backdrop-blur-lg p-6 mx-auto rounded-2xl border border-[#d4af37]/40 shadow-[0_0_25px_rgba(212,175,55,0.2)]"
+            initial={{ x: -60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <h3 className="text-2xl font-semibold text-[#d4af37] mb-4">
               Visit Us
             </h3>
@@ -37,7 +55,7 @@ export default function Contact() {
               <div>
                 <h4 className="font-semibold text-lg text-white">Address</h4>
                 <p className="text-gray-300">
-                  Canoe Café and Restaurant, Kebele 8, Bahir Dar, Ethiopia
+                  Canoe Cafe and Restaurant, Kebele 8, Bahir Dar, Ethiopia
                 </p>
               </div>
             </div>
@@ -46,7 +64,7 @@ export default function Contact() {
               <FaPhoneAlt className="text-[#d4af37] text-2xl" />
               <div>
                 <h4 className="font-semibold text-lg text-white">Phone</h4>
-                <p className="text-gray-300">+251 912 345 678</p>
+                <p className="text-gray-300">+251 920 51 7572</p>
               </div>
             </div>
 
@@ -54,13 +72,20 @@ export default function Contact() {
               <FaEnvelope className="text-[#d4af37] text-2xl" />
               <div>
                 <h4 className="font-semibold text-lg text-white">Email</h4>
-                <p className="text-gray-300">info@canoecafeandrestorant.com</p>
+                <p className="text-gray-300">
+                  info@canoecafeandrestaurant.com
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Contact Form */}
-          <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-[#d4af37]/40 shadow-[0_0_25px_rgba(212,175,55,0.2)]">
+          <motion.div
+            className="bg-white/10 backdrop-blur-lg p-9 rounded-2xl border border-[#d4af37]/40 shadow-[0_0_25px_rgba(212,175,55,0.2)]"
+            initial={{ x: 60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <form>
               <div className="mb-5">
                 <label className="block mb-2 font-medium text-gray-200">Name</label>
@@ -93,14 +118,19 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-[#d4af37] hover:bg-[#c5a231] text-black font-semibold py-2 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:shadow-[0_0_25px_rgba(212,175,55,0.8)]"
               >
-                Send Message ✨
+                Send Message
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
 
         {/* Map Section */}
-        <div className="mt-16">
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <h3 className="text-3xl font-semibold text-[#d4af37] text-center mb-6">
             Find Us
           </h3>
@@ -116,8 +146,8 @@ export default function Contact() {
               className="w-full"
             ></iframe>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
