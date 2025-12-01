@@ -12,7 +12,7 @@ export default function Navbar({ handleOrderPopup }) {
     { id: 1, name: "Home", link: "/" }, // CHANGED from "/#" to "/"
     { id: 2, name: "Menu", link: "/menu" }, // CHANGED from "/#services" to "/menu"
     { id: 3, name: "About Us", link: "/about", isDropdown: true }, // CHANGED
-    { id: 4, name: "Admin Portal", link: "/admin" }, // CHANGED
+    { id: 4, name: "Admin Portal", link: "/admin-login" },
     { id: 5, name: "Contact", link: "/contact" }, // CHANGED
   ];
 
