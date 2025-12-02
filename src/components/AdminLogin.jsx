@@ -123,16 +123,6 @@ const AdminLogin = () => {
             )}
           </button>
         </form>
-
-        <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
-            <strong>Demo Credentials:</strong>
-            <br />
-            Username: <span className="font-mono">admin</span>
-            <br />
-            Password: <span className="font-mono">canoe2025</span>
-          </p>
-        </div>
       </div>
     </section>
   );

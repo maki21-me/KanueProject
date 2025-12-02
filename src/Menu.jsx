@@ -108,30 +108,15 @@ const Menu = () => {
       : menuItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="min-h-screen bg-white dark:bg-gray-900 pt-10">
-      {/* Hero Section with Background Image */}
-      <div
-        className="relative py-20 text-white"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif italic font-bold mb-6">
-            Our Menu
-          </h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed">
-            "See with your eyes the beauty of Tana River, then taste with your
-            heart with us."
-          </p>
-        </div>
-      </div>
+    <section className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+      {/* Main Content - No background image section */}
+      <div className="container mx-auto px-6">
+        {/* Title with padding-top to avoid navbar overlap */}
+        <h1 className="text-4xl md:text-5xl font-serif italic font-bold text-center mb-8">
+          Our Menu
+        </h1>
 
-      {/* Menu Categories */}
-      <div className="container mx-auto px-6 py-12">
+        {/* Menu Categories */}
         <div className="flex justify-center flex-wrap gap-4 mb-12">
           {categories.map((category) => (
             <button
@@ -148,7 +133,8 @@ const Menu = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Menu Items Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {filteredItems.map((item) => (
             <div
               key={item.id}
@@ -166,12 +152,20 @@ const Menu = () => {
                 <h3 className="text-xl font-semibold text-primary dark:text-white">
                   {item.name}
                 </h3>
-                <span className="text-2xl font-bold text-secondary dark:text-yellow-400">
+                <span className="text-2xl font-bold text-yellow-500 dark:text-yellow-400">
                   {item.price}
                 </span>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Inspirational Quote at the end - with price color */}
+        <div className="text-center py-12 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-xl md:text-2xl italic text-yellow-500 dark:text-yellow-400 leading-relaxed max-w-2xl mx-auto">
+            "See with your eyes the beauty of Tana River, then taste with your
+            heart with us."
+          </p>
         </div>
       </div>
     </section>
