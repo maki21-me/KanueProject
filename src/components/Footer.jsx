@@ -24,11 +24,11 @@ export default function Footer() {
             <div>
               <h3 className="text-xl font-semibold text-[#4a2c23] mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="/#" className="hover:text-primary transition-colors">Home</a></li>
-                <li><a href="/#services" className="hover:text-primary transition-colors">Menu</a></li>
-                <li><a href="/#about" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
-                <li><a href="/#admin" className="hover:text-primary transition-colors">Admin Portal</a></li>
+                <li><a href="/" className="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="/menu" className="hover:text-primary transition-colors">Menu</a></li>
+                <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="/admin" className="hover:text-primary transition-colors">Admin Portal</a></li>
               </ul>
             </div>
 

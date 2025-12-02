@@ -32,7 +32,7 @@ export default function Contact() {
             Contact Us
           </h2>
           <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-            We’d love to hear from you—feedback, bookings, or just a friendly hello!
+            We’d love to hear from you feedback, bookings, or just a friendly hello!
           </p>
         </motion.div>
 

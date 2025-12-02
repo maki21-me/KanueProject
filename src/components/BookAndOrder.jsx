@@ -115,7 +115,7 @@ export default function BookOrder() {
           {/* Order Details */}
           <div>
             <label className="block mb-2 font-medium text-gray-200">
-              <FaUtensils className="inline mr-2 text-[#d4af37]" /> Order Details
+              <FaUtensils className="inline mr-2 text-[#d4af37]" /> Special Request 
             </label>
             <textarea
               name="orderDetails"

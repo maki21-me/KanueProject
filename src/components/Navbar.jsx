@@ -89,7 +89,7 @@ export default function Navbar() {
               to="/book-order"
               className="bg-gradient-to-r from-[#d4af37] to-[#8B4513] text-white px-5 py-2 rounded-full flex items-center gap-3 shadow-lg hover:brightness-110 transition-all duration-300"
             >
-              Book & Order
+              Book Table
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
             </Link>
           </motion.div>
