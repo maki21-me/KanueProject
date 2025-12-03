@@ -1,7 +1,7 @@
 import React from "react";
-import greenImage from "../assets/Images/green.jpg";
-import coffeeImage from "../assets/Images/coffee.jpg";
-import newImage from "../assets/Images/new.jpg";
+import greenImage from "../assets/Images/restaurant.png";
+import coffeeImage from "../assets/Images/cofee.jpg";
+import newImage from "../assets/Images/out.jpg";
 import { Link } from "react-router-dom";
 
 const AboutUs = () => {
@@ -167,44 +167,91 @@ const AboutUs = () => {
           <div className="about-text" style={styles.aboutText}>
             <div className="about-description">
               <p style={styles.aboutDescription}>
-                At <span style={{ ...styles.accentText, ...styles.fontSemibold }}>Canoe</span>, we believe that exceptional dining is an art form that brings people together. Our commitment to culinary excellence and warm hospitality creates an atmosphere where every meal becomes a memorable experience.
+                At{" "}
+                <span style={{ ...styles.accentText, ...styles.fontSemibold }}>
+                  Canoe
+                </span>
+                , we believe that exceptional dining is an art form that brings
+                people together. Our commitment to culinary excellence and warm
+                hospitality creates an atmosphere where every meal becomes a
+                memorable experience.
               </p>
 
               <p style={styles.aboutDescription}>
-                Founded with a vision to blend contemporary cuisine with timeless elegance, Canoe has become a destination for those who appreciate the finer things in life. Our carefully curated menu features signature dishes that showcase the perfect harmony of flavors, textures, and presentation.
+                Founded with a vision to blend contemporary cuisine with
+                timeless elegance, Canoe has become a destination for those who
+                appreciate the finer things in life. Our carefully curated menu
+                features signature dishes that showcase the perfect harmony of
+                flavors, textures, and presentation.
               </p>
             </div>
 
             <div className="features-grid" style={styles.featuresGrid}>
               <div className="feature-item" style={styles.featureItem}>
-                <div className="feature-icon" style={styles.featureIcon}>🍽️</div>
+                <div className="feature-icon" style={styles.featureIcon}>
+                  🍽️
+                </div>
                 <div className="feature-content" style={styles.featureContent}>
-                  <h3 className="feature-title" style={styles.featureTitle}>Signature Dishes</h3>
-                  <p className="feature-description" style={styles.featureDescription}>Handcrafted culinary masterpieces</p>
+                  <h3 className="feature-title" style={styles.featureTitle}>
+                    Signature Dishes
+                  </h3>
+                  <p
+                    className="feature-description"
+                    style={styles.featureDescription}
+                  >
+                    Handcrafted culinary masterpieces
+                  </p>
                 </div>
               </div>
 
               <div className="feature-item" style={styles.featureItem}>
-                <div className="feature-icon" style={styles.featureIcon}>🌿</div>
+                <div className="feature-icon" style={styles.featureIcon}>
+                  🌿
+                </div>
                 <div className="feature-content" style={styles.featureContent}>
-                  <h3 className="feature-title" style={styles.featureTitle}>Fresh Ingredients</h3>
-                  <p className="feature-description" style={styles.featureDescription}>Locally sourced, premium quality</p>
+                  <h3 className="feature-title" style={styles.featureTitle}>
+                    Fresh Ingredients
+                  </h3>
+                  <p
+                    className="feature-description"
+                    style={styles.featureDescription}
+                  >
+                    Locally sourced, premium quality
+                  </p>
                 </div>
               </div>
 
               <div className="feature-item" style={styles.featureItem}>
-                <div className="feature-icon" style={styles.featureIcon}>👨‍🍳</div>
+                <div className="feature-icon" style={styles.featureIcon}>
+                  👨‍🍳
+                </div>
                 <div className="feature-content" style={styles.featureContent}>
-                  <h3 className="feature-title" style={styles.featureTitle}>Expert Chefs</h3>
-                  <p className="feature-description" style={styles.featureDescription}>Award-winning culinary team</p>
+                  <h3 className="feature-title" style={styles.featureTitle}>
+                    Expert Chefs
+                  </h3>
+                  <p
+                    className="feature-description"
+                    style={styles.featureDescription}
+                  >
+                    Award-winning culinary team
+                  </p>
                 </div>
               </div>
 
               <div className="feature-item" style={styles.featureItem}>
-                <div className="feature-icon" style={styles.featureIcon}>🍷</div>
+                <div className="feature-icon" style={styles.featureIcon}>
+                  🍷
+                </div>
                 <div className="feature-content" style={styles.featureContent}>
-                  <h3 className="feature-title" style={styles.featureTitle}>Fine Wine</h3>
-                  <p className="feature-description" style={styles.featureDescription}>Curated selection of premium wines</p>
+                  <h3 className="feature-title" style={styles.featureTitle}>
+                    Fine Wine
+                  </h3>
+                  <p
+                    className="feature-description"
+                    style={styles.featureDescription}
+                  >
+                    Curated selection of premium wines
+                  </p>
                 </div>
               </div>
             </div>
@@ -212,7 +259,11 @@ const AboutUs = () => {
 
           <div className="about-image" style={styles.aboutImage}>
             <div className="image-container" style={styles.imageContainer}>
-              <img src={newImage} alt="Elegant restaurant dining experience" style={styles.image} />
+              <img
+                src={newImage}
+                alt="Elegant restaurant dining experience"
+                style={styles.image}
+              />
               {/* image badge removed per user request */}
             </div>
           </div>
@@ -220,15 +271,40 @@ const AboutUs = () => {
 
         {/* Coffee Spot (kept as the sole additional section) */}
         <div style={{ marginTop: 40 }}>
-          <div style={{ display: "flex", gap: 28, alignItems: "center", justifyContent: "space-between", background: "white", padding: 24, borderRadius: 12, boxShadow: "0 8px 24px rgba(0,0,0,0.06)", flexWrap: "wrap-reverse", flexDirection: "row-reverse" }}>
-            <img src={coffeeImage} alt="Coffee Spot" style={{ width: 420, height: 260, objectFit: "cover", borderRadius: 10, flex: "0 0 420px" }} />
+          <div
+            style={{
+              display: "flex",
+              gap: 28,
+              alignItems: "center",
+              justifyContent: "space-between",
+              background: "white",
+              padding: 24,
+              borderRadius: 12,
+              boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+              flexWrap: "wrap-reverse",
+              flexDirection: "row-reverse",
+            }}
+          >
+            <img
+              src={coffeeImage}
+              alt="Coffee Spot"
+              style={{
+                width: 420,
+                height: 260,
+                objectFit: "cover",
+                borderRadius: 10,
+                flex: "0 0 420px",
+              }}
+            />
             <div style={{ flex: "1 1 300px", minWidth: 220 }}>
-              <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>Our Coffee Spot</h3>
+              <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>
+                Our Coffee Spot
+              </h3>
               <p style={{ marginTop: 12, color: "#666", lineHeight: 1.6 }}>
-                Mornings at Canoe are slow and intentional. Our Coffee Spot features
-                a refined espresso program and specialty brews, prepared by a
-                barista team who care about origin, roast and technique. Stop by
-                for a pastry and a thoughtfully pulled shot.
+                Mornings at Canoe are slow and intentional. Our Coffee Spot
+                features a refined espresso program and specialty brews,
+                prepared by a barista team who care about origin, roast and
+                technique. Stop by for a pastry and a thoughtfully pulled shot.
               </p>
             </div>
           </div>
@@ -236,13 +312,37 @@ const AboutUs = () => {
 
         {/* Come refresh CTA */}
         <div style={{ marginTop: 56 }}>
-          <div style={{ textAlign: "center", padding: "48px 20px", borderRadius: 12, background: "linear-gradient(90deg,#f7faf9,#ffffff)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
-            <h3 style={{ margin: 0, fontSize: 28, fontWeight: 800, color: "#111827" }}>Come refresh at Canoe</h3>
+          <div
+            style={{
+              textAlign: "center",
+              padding: "48px 20px",
+              borderRadius: 12,
+              background: "linear-gradient(90deg,#f7faf9,#ffffff)",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
+            }}
+          >
+            <h3 style={{ margin: 0, fontSize: 28, fontWeight: 800, color: "#111827" }}>
+              Come refresh at Canoe
+            </h3>
             <p style={{ marginTop: 12, color: "#4b5563", maxWidth: 760, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
               Visit us to reconnect over thoughtfully prepared dishes and a refined coffee program — an inviting space to pause, savor, and refresh.
             </p>
             <div style={{ marginTop: 18 }}>
-              <a href="/book-order" style={{ display: "inline-block", background: "#0f766e", color: "white", padding: "10px 18px", borderRadius: 999, textDecoration: "none", fontWeight: 700 }}>Reserve a table</a>
+              <a
+                href="/book-order"
+                className="interactive"
+                style={{
+                  display: "inline-block",
+                  background: "#0f766e",
+                  color: "white",
+                  padding: "10px 18px",
+                  borderRadius: 999,
+                  textDecoration: "none",
+                  fontWeight: 700,
+                }}
+              >
+                Reserve a table
+              </a>
             </div>
           </div>
         </div>
