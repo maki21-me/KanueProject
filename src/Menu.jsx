@@ -108,7 +108,7 @@ const Menu = () => {
       : menuItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="min-h-screen bg-white dark:bg-gray-900 pt-20">
+   <section className="min-h-screen bg-white dark:bg-gray-900 pt-32 md:pt-24">
       {/* Main Content - No background image section */}
       <div className="container mx-auto px-6">
         {/* Title with padding-top to avoid navbar overlap */}
