@@ -1,13 +1,26 @@
-import React from 'react'
-import Navbar from './components/Navbar.jsx'
-import Home from './components/Home.jsx'
-import Footer from './components/Footer.jsx'
-export default function App(){
-  return(
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./components/Home.jsx";
+import Footer from "./components/Footer.jsx";
+import Contact from "./components/Contact.jsx";
+import BookAndOrder from "./components/BookAndOrder.jsx";
+import AboutUs from "./components/AboutUs.jsx"; // import AboutUs
+import Testimonies from "./components/testimonies.jsx";
+
+export default function App() {
+  return (
     <div>
       <Navbar />
-      <Home/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} /> {/* new AboutUs route */}
+        <Route path="/testimonies" element={<Testimonies />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/AdminPortal" element={<AdminPortal />} /> */}
+        <Route path="/book-order" element={<BookAndOrder />} />
+      </Routes>
+      <Footer />
     </div>
-  )
+  );
 }

@@ -179,7 +179,7 @@ const AboutUs = () => {
 
               <p style={styles.aboutDescription}>
                 Founded with a vision to blend contemporary cuisine with
-                timeless elegance, Canoe has become a destination for those who
+                timeless elegance, Canoee has become a destination for those who
                 appreciate the finer things in life. Our carefully curated menu
                 features signature dishes that showcase the perfect harmony of
                 flavors, textures, and presentation.
@@ -321,11 +321,29 @@ const AboutUs = () => {
               boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
             }}
           >
-            <h3 style={{ margin: 0, fontSize: 28, fontWeight: 800, color: "#111827" }}>
+            <h3
+              style={{
+                margin: 0,
+                fontSize: 28,
+                fontWeight: 800,
+                color: "#111827",
+              }}
+            >
               Come refresh at Canoe
             </h3>
-            <p style={{ marginTop: 12, color: "#4b5563", maxWidth: 760, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
-              Visit us to reconnect over thoughtfully prepared dishes and a refined coffee program — an inviting space to pause, savor, and refresh.
+            <p
+              style={{
+                marginTop: 12,
+                color: "#4b5563",
+                maxWidth: 760,
+                marginLeft: "auto",
+                marginRight: "auto",
+                lineHeight: 1.6,
+              }}
+            >
+              Visit us to reconnect over thoughtfully prepared dishes and a
+              refined coffee program — an inviting space to pause, savor, and
+              refresh.
             </p>
             <div style={{ marginTop: 18 }}>
               <a

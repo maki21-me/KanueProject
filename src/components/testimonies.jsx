@@ -24,7 +24,7 @@ const Testimonies = () => {
         "As a chef myself, I'm incredibly impressed with the innovation and technique displayed in every course. The flavor combinations are bold yet perfectly balanced. A true culinary destination.",
       author: "Biniyam Maru",
       role: "Executive Chef, The Culinary Institute",
-      initials: "MR",
+      initials: "BM",
       rating: 5,
     },
     {

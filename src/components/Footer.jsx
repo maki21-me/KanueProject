@@ -57,16 +57,16 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform interactive">
                 <FaFacebookF className="text-white text-lg" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform interactive">
                 <FaInstagram className="text-white text-lg" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform">
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform interactive">
                 <FaTwitter className="text-white text-lg" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform">
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-110 transition-transform interactive">
                 <FaYoutube className="text-white text-lg" />
               </a>
             </div>
