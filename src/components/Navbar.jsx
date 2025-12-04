@@ -19,9 +19,8 @@ export default function Navbar() {
   ];
 
   const DropdownLinks = [
-    { id: 1, name: "Story", link: "/#" },
-    { id: 2, name: "Entertainment", link: "/#" },
-    { id: 3, name: "Testimonials", link: "/#" },
+    { id: 1, name: "Story", link: "/about#philosophy" },
+    { id: 3, name: "Testimonials", link: "/testimonies" },
   ];
 
   return (

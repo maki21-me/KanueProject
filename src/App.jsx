@@ -8,11 +8,11 @@ import BookAndOrder from './components/BookAndOrder.jsx';
 import Menu from "./Menu.jsx";
 import Admin from "./components/Admin.jsx";
 import AdminLogin from "./components/AdminLogin.jsx";
+import AboutUs from "./components/AboutUs.jsx"; // import AboutUs
+import Testimonies from "./components/testimonies.jsx";
 
-//import AdminPortal from './components/AdminPortal.jsx'
-
-export default function App(){
-  return(
+export default function App() {
+  return (
     <div>
       <Navbar />
       <Routes>
@@ -21,6 +21,8 @@ export default function App(){
           <Route path="/admin-login" element={<AdminLogin />} />{" "}
           {/* ADD THIS */}
           <Route path="/admin" element={<Admin />} />
+        <Route path="/about" element={<AboutUs />} /> {/* new AboutUs route */}
+        <Route path="/testimonies" element={<Testimonies />} />
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="/AdminPortal" element={<AdminPortal />} /> */}
         <Route path="/book-order" element={<BookAndOrder />} />

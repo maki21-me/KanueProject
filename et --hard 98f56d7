@@ -1,0 +1,16 @@
+[33mfd95f18[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/frontend[m[33m)[m Merge branch 'aboutus' into feature/frontend
+[33mc46268f[m change in navbar
+[33m03e67ce[m[33m ([m[1;31morigin/aboutus[m[33m, [m[1;32maboutus[m[33m)[m Update AboutUs and testimonies components
+[33mfee852d[m chore: restore AboutUs and testimonies from 615328a
+[33m9265dbf[m[33m ([m[1;31morigin/canoe[m[33m)[m Merge feature/frontend: Combined dependencies (framer-motion + jspdf)
+[33m5df58b5[m Updated Admin page with PDF report feature and Menu page layout improvements
+[33m86817e9[m[33m ([m[1;31morigin/feature/frontend[m[33m)[m Resolved merge conflicts with canoe branch
+[33m5efa209[m My updates before merging canoe
+[33mc1b8c88[m[33m ([m[1;32mcanoe[m[33m)[m feat: Complete restaurant website with admin system, menu, and images
+[33m6c2a1da[m updating some pages
+[33mdfe3f6e[m updating some pages
+[33m30ed123[m Add all frontend changes
+[33md8e0c59[m Add Admin component and update menu functionality
+[33m62a7a35[m update some content
+[33mc92b58d[m 🎉 Added stunning luxury menu page with: - Real food images from Unsplash - River-inspired elegant design - Category filtering system - Responsive mobile layout - Floating cart functionality - Professional restaurant styling
+[33mbd081bc[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain-backup[m[33m, [m[1;32mmain[m[33m)[m Initial commit with project files
