@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCaretDown } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
@@ -31,7 +31,7 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="fixed w-full z-50 bg-white dark:bg-gray-900 shadow-md"
     >
-      <div className="container mx-auto px-6 py-5 sm:py-2 flex justify-between items-center max-w-6xl">
+      <div className="w-full px-6 sm:px-10 py-5 sm:py-2 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <GiCanoe className="text-[#d4af37] text-6xl drop-shadow-md" />
