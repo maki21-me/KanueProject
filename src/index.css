@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Slightly smaller base font for a tighter layout */
+body {
+  font-size: 15px;
+}
+
+/* Reusable interactive utility: subtle scale + shadow + focus ring */
+.interactive {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.interactive:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.interactive:active {
+  transform: translateY(0) scale(0.995);
+}
+.interactive:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
