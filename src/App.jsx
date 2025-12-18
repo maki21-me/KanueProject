@@ -10,6 +10,7 @@ import Admin from "./components/Admin.jsx";
 import AdminLogin from "./components/AdminLogin.jsx";
 import AboutUs from "./components/AboutUs.jsx"; // import AboutUs
 import Testimonies from "./components/testimonies.jsx";
+import Payment from './components/Payment.jsx';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/payment" element={<Payment />} />
           <Route path="/admin-login" element={<AdminLogin />} />{" "}
           {/* ADD THIS */}
           <Route path="/admin" element={<Admin />} />

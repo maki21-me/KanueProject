@@ -1,98 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("all");
+  const [order, setOrder] = useState([]);
 
   const menuItems = [
-    // Appetizers
-    {
-      id: 1,
-      name: "Special Juice",
-      price: "ETB180",
-      category: "appetizers",
-      image: "/src/assets/images/photo_1_2025-11-26_10-26-14.jpg",
-    },
-    {
-      id: 2,
-      name: "Lemon Juice",
-      price: "ETB120",
-      category: "appetizers",
-      image: "/src/assets/Images/photo_1_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 3,
-      name: "Beef Burger",
-      price: "ETB450",
-      category: "appetizers",
-      image: "src/assets/Images/photo_1_2025-11-26_10-27-50.jpg",
-    },
+    { id: 1, name: "Special Juice", price: 180, category: "appetizers", image: "/src/assets/Images/photo_1_2025-11-26_10-26-14.jpg" },
+    { id: 2, name: "Lemon Juice", price: 120, category: "appetizers", image: "/src/assets/Images/photo_1_2025-11-26_10-27-10.jpg" },
+    { id: 3, name: "Beef Burger", price: 450, category: "appetizers", image: "/src/assets/Images/photo_1_2025-11-26_10-27-50.jpg" },
 
-    // Main Courses
-    {
-      id: 4,
-      name: "Strawberry juice",
-      price: "ETB200",
-      category: "mains",
-      image: "src/assets/Images/photo_2_2025-11-26_10-26-14.jpg",
-    },
-    {
-      id: 5,
-      name: "Vegetarian Platter",
-      price: "ETB300",
-      category: "mains",
-      image: "src/assets/Images/photo_2_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 6,
-      name: "Chicken salad",
-      price: "ETB400",
-      category: "mains",
-      image: "src/assets/Images/photo_2_2025-11-26_10-27-50.jpg",
-    },
-    {
-      id: 7,
-      name: "Special burger",
-      price: "ETB480",
-      category: "mains",
-      image: "src/assets/Images/photo_3_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 8,
-      name: "Fruit paunch",
-      price: "ETB400",
-      category: "mains",
-      image: "src/assets/Images/photo_4_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 9,
-      name: "BURGER with fries",
-      price: "ETB500",
-      category: "mains",
-      image: "src/assets/Images/photo_5_2025-11-26_10-27-10.jpg",
-    },
+    { id: 4, name: "Strawberry Juice", price: 200, category: "mains", image: "/src/assets/Images/photo_2_2025-11-26_10-26-14.jpg" },
+    { id: 5, name: "Vegetarian Platter", price: 300, category: "mains", image: "/src/assets/Images/photo_2_2025-11-26_10-27-10.jpg" },
+    { id: 6, name: "Chicken Salad", price: 400, category: "mains", image: "/src/assets/Images/photo_2_2025-11-26_10-27-50.jpg" },
 
-    // Desserts
-    {
-      id: 10,
-      name: "STRAWBERRY CHEESECAKE",
-      price: "ETB250",
-      category: "desserts",
-      image: "src/assets/Images/photo_6_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 11,
-      name: "MIX FRUIT ",
-      price: "ETB230",
-      category: "desserts",
-      image: "src/assets/Images/photo_7_2025-11-26_10-27-10.jpg",
-    },
-    {
-      id: 12,
-      name: "CHOCOLATE DRINK",
-      price: "ETB300",
-      category: "desserts",
-      image: "src/assets/Images/photo_8_2025-11-26_10-27-10.jpg",
-    },
+    { id: 7, name: "Special Burger", price: 480, category: "mains", image: "/src/assets/Images/photo_3_2025-11-26_10-27-10.jpg" },
+    { id: 8, name: "Fruit Punch", price: 400, category: "mains", image: "/src/assets/Images/photo_4_2025-11-26_10-27-10.jpg" },
+    { id: 9, name: "Burger with Fries", price: 500, category: "mains", image: "/src/assets/Images/photo_5_2025-11-26_10-27-10.jpg" },
+
+    { id: 10, name: "Strawberry Cheesecake", price: 250, category: "desserts", image: "/src/assets/Images/photo_6_2025-11-26_10-27-10.jpg" },
+    { id: 11, name: "Mix Fruit", price: 230, category: "desserts", image: "/src/assets/Images/photo_7_2025-11-26_10-27-10.jpg" },
+    { id: 12, name: "Chocolate Drink", price: 300, category: "desserts", image: "/src/assets/Images/photo_8_2025-11-26_10-27-10.jpg" },
   ];
 
   const categories = [
@@ -107,65 +36,131 @@ const Menu = () => {
       ? menuItems
       : menuItems.filter((item) => item.category === activeCategory);
 
+  const addItem = (item) => {
+    const found = order.find((i) => i.id === item.id);
+    if (found) {
+      setOrder(order.map((i) =>
+        i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+      ));
+    } else {
+      setOrder([...order, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const removeItem = (id) => {
+    setOrder(
+      order
+        .map((i) =>
+          i.id === id ? { ...i, quantity: i.quantity - 1 } : i
+        )
+        .filter((i) => i.quantity > 0)
+    );
+  };
+
+  const getItem = (id) => order.find((i) => i.id === id);
+
+  const handleProceed = () => {
+    localStorage.setItem("orderItems", JSON.stringify(order));
+    navigate("/payment");
+  };
+
   return (
-    <section className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      {/* Main Content - No background image section */}
+    <section className="min-h-screen bg-white pt-20">
       <div className="container mx-auto px-6">
-        {/* Title with padding-top to avoid navbar overlap */}
-        <h1 className="text-4xl md:text-5xl font-serif italic font-bold text-center mb-8">
+        <h1 className="text-4xl font-serif italic font-bold text-center mb-10">
           Our Menu
         </h1>
 
-        {/* Menu Categories */}
+        {/* Categories */}
         <div className="flex justify-center flex-wrap gap-4 mb-12">
-          {categories.map((category) => (
+          {categories.map((c) => (
             <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeCategory === category.id
-                  ? "bg-primary text-white shadow-lg"
-                  : "bg-white text-primary border border-primary hover:bg-primary hover:text-white"
+              key={c.id}
+              onClick={() => setActiveCategory(c.id)}
+              className={`px-6 py-3 rounded-full font-semibold ${
+                activeCategory === c.id
+                  ? "bg-[#d4af37] text-black"
+                  : "border border-[#d4af37] text-[#d4af37]"
               }`}
             >
-              {category.name}
+              {c.name}
             </button>
           ))}
         </div>
 
-        {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="w-full aspect-[4/3] overflow-hidden bg-gray-100">
+        {/* Menu Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item) => {
+            const selected = getItem(item.id);
+
+            return (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden group"
+              >
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-56 object-cover"
                 />
-              </div>
 
-              <div className="p-6 flex justify-between items-center">
-                <h3 className="text-xl font-semibold text-primary dark:text-white">
-                  {item.name}
-                </h3>
-                <span className="text-2xl font-bold text-yellow-500 dark:text-yellow-400">
-                  {item.price}
-                </span>
+                <div className="p-4">
+                  <h3 className="font-bold text-lg">{item.name}</h3>
+                </div>
+
+                {/* Bottom Hover Bar */}
+                <div className="px-4 pb-4 opacity-0 group-hover:opacity-100 transition">
+                  {!selected ? (
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold text-yellow-600">
+                        ETB {item.price}
+                      </span>
+                      <button
+                        onClick={() => addItem(item)}
+                        className="text-sm font-semibold text-black bg-[#d4af37] px-4 py-2 rounded-full"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => removeItem(item.id)}
+                          className="px-3 py-1 bg-gray-200 rounded"
+                        >
+                          −
+                        </button>
+                        <span className="font-semibold">
+                          {selected.quantity}
+                        </span>
+                        <button
+                          onClick={() => addItem(item)}
+                          className="px-3 py-1 bg-[#d4af37] rounded"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <span className="font-semibold text-yellow-600">
+                        ETB {selected.quantity * item.price}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Inspirational Quote at the end - with price color */}
-        <div className="text-center py-12 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-xl md:text-2xl italic text-yellow-500 dark:text-yellow-400 leading-relaxed max-w-2xl mx-auto">
-            "See with your eyes the beauty of Tana River, then taste with your
-            heart with us."
-          </p>
+        {/* Proceed */}
+        <div className="text-center my-14">
+          <button
+            onClick={handleProceed}
+            disabled={order.length === 0}
+            className="px-10 py-4 bg-[#d4af37] text-black rounded-full font-bold disabled:opacity-50"
+          >
+            Proceed to Payment
+          </button>
         </div>
       </div>
     </section>

@@ -60,7 +60,7 @@ export default function Home() {
             onClick={() => navigate("/book-order")}
             className="bg-gradient-to-r from-[#d4af37] to-[#8B4513] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >
-            Book a Table
+            Book and Order
           </button>
 
           <a
