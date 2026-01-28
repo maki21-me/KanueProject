@@ -8,6 +8,7 @@ const PaymentPage = () => {
     name: "",
     phone: "",
   });
+  const [orderId, setOrderId] = useState(null);
 
   // Load order from localStorage
   useEffect(() => {
@@ -23,12 +24,71 @@ const PaymentPage = () => {
     0
   );
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (!customer.name || !customer.phone || !paymentMethod) {
       alert("Please fill all required fields");
       return;
     }
-    setStep(2);
+
+    // Create Order in Backend
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/orders/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customer_name: customer.name,
+          customer_phone: customer.phone,
+          items: orderItems,
+          total_amount: totalBirr,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to create order");
+      }
+
+      const data = await response.json();
+      setOrderId(data.id);
+      setStep(2);
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert("Failed to proceed. Please try again.");
+    }
+  };
+
+  const handlePaymentSubmit = async () => {
+    if (!orderId) return;
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/payments/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          order: orderId,
+          method: paymentMethod,
+          status: "Pending",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit payment");
+      }
+
+      alert("Payment info submitted successfully! We will verify it shortly.");
+      // Optionally redirect or clear state
+      setOrderItems([]);
+      localStorage.removeItem("orderItems");
+      setStep(1); // or redirect to home
+      setCustomer({ name: "", phone: "" });
+      setPaymentMethod("");
+    } catch (error) {
+      console.error("Error submitting payment:", error);
+      alert("Failed to submit payment info.");
+    }
   };
 
   return (
@@ -105,22 +165,20 @@ const PaymentPage = () => {
               <div className="flex gap-4">
                 <button
                   onClick={() => setPaymentMethod("CBE")}
-                  className={`flex-1 py-3 rounded-xl border ${
-                    paymentMethod === "CBE"
-                      ? "bg-yellow-500 text-black"
-                      : "hover:bg-gray-100"
-                  }`}
+                  className={`flex-1 py-3 rounded-xl border ${paymentMethod === "CBE"
+                    ? "bg-yellow-500 text-black"
+                    : "hover:bg-gray-100"
+                    }`}
                 >
                   Commercial Bank of Ethiopia
                 </button>
 
                 <button
                   onClick={() => setPaymentMethod("Telebirr")}
-                  className={`flex-1 py-3 rounded-xl border ${
-                    paymentMethod === "Telebirr"
-                      ? "bg-yellow-500 text-black"
-                      : "hover:bg-gray-100"
-                  }`}
+                  className={`flex-1 py-3 rounded-xl border ${paymentMethod === "Telebirr"
+                    ? "bg-yellow-500 text-black"
+                    : "hover:bg-gray-100"
+                    }`}
                 >
                   Telebirr
                 </button>
@@ -149,7 +207,7 @@ const PaymentPage = () => {
                   Commercial Bank of Ethiopia
                 </p>
                 <p>Account Name: Canoe Cafe and Restaurant</p>
-                <p>Account Number: 1000 1234 5678</p>
+                <p>Account Number: 1000 307 691 241</p>
                 <p className="mt-3 text-sm">
                   Reference: <b>{customer.name} - {customer.phone}</b>
                 </p>
@@ -159,7 +217,7 @@ const PaymentPage = () => {
             {paymentMethod === "Telebirr" && (
               <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl mb-6">
                 <p className="font-semibold mb-2">Telebirr</p>
-                <p>Telebirr Number: 0912 345 678</p>
+                <p>Telebirr Number: 0968 32 78 55</p>
                 <p className="mt-3 text-sm">
                   Reference: <b>{customer.name} - {customer.phone}</b>
                 </p>
@@ -171,7 +229,10 @@ const PaymentPage = () => {
               Our reception will verify your payment manually.
             </p>
 
-            <button className="w-full mt-6 py-3 bg-yellow-500 text-black font-semibold rounded-xl hover:bg-yellow-600">
+            <button
+              onClick={handlePaymentSubmit}
+              className="w-full mt-6 py-3 bg-yellow-500 text-black font-semibold rounded-xl hover:bg-yellow-600"
+            >
               I Have Sent the Money
             </button>
           </>
