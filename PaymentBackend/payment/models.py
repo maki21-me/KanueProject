@@ -10,8 +10,14 @@ class Order(models.Model):
     total_amount = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"Order #{self.id} - {self.customer_name}"
+
 class Payment(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     method = models.CharField(max_length=50)  # e.g., 'CBE', 'Telebirr'
     status = models.CharField(max_length=20, default='Pending')  # 'Pending', 'Completed'
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Payment #{self.id} for Order #{self.order.id}"
